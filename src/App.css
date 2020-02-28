@@ -1,0 +1,122 @@
+.App {
+  text-align: center;
+  padding: 15px;
+}
+
+
+
+header { 
+  margin-bottom: 20px;
+  padding: 3px;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+main {
+  position: relative;
+}
+
+.link-to-top {
+  position: fixed;
+  top: 85%;
+  left: 97%;
+  font-size: 30px;
+  color: #FF4136;
+}
+
+
+select , input ,header {
+  border: 2px solid transparent;
+  outline: none;
+  padding-left: 20px;
+}
+
+input::-webkit-input-placeholder{
+  color: inherit;
+}
+#fontVal {
+  border: transparent;
+}
+
+#textVal{
+  border-top: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+}
+
+header select {
+  border-top: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+}
+
+
+.main-content-item{
+  position: relative;
+  padding: 20px;
+  border-top: 2px solid transparent;
+  margin-top: 3px;
+}
+
+.main-content-item i{
+  color: #FF4136;
+  position: absolute;
+  top: 11%;
+  left: 89%;
+  border: 2px solid #FF4136;
+  border-radius: 50%;
+  font-size: 16px;
+  padding: 3px;
+}
+
+.black-theme-button , .white-theme-button {
+position: relative;
+
+}
+
+
+.black-theme-button::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  
+}
+
+.white-theme-button::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+ background-color: #ffffff;
+ border: 1px solid #000000;
+}
+
+
+@media  (max-width: 640px) {
+  header { 
+ flex-direction: column;
+ height: 13rem;
+  }
+
+  #fontVal,#textVal, header > select{
+    border: 2px solid transparent;
+  }
+  .link-to-top {
+    left: 89%;
+  }
+
+  }

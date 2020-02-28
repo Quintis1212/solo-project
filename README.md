@@ -1,74 +1,68 @@
-# solo-project
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-Hello guys ) This is my Chingu Solo Project - Tier 2 - Favorite Fonts. This project was build on react , with react-router. 
-Main functions :
-1.Text typed into the input box change the  text in each font card.
-2.If the input box no longer has any input there is a text for example to show all font card.
-3.You can choose font size for each font card.
-4.Clickable 'reset' icon on the far right of the major navigation to clean all input fields.
-5.On the page fonts displayed  as returned by the Google Fonts Developer API.
-6.When the search input is cleared  the fonts  automaticaly displayed and sorted by poplarity again.
-7.You can search fonts by typing them in the second input box.
+In the project directory, you can run:
 
-But in some cases I use native js, such as: showing link to top on scroll, infinitive pagination:
-```javascript
-    componentDidMount(){
-        let component  = this                                                      
-       const scrollFunc=(component)=>{ 
-        window.addEventListener('scroll', function(e) {
-            console.log( Math.round( window.scrollY)  , document.body.offsetHeight);
-            if ((window.innerHeight + window.scrollY) > (document.body.offsetHeight-10) ){
-                  component.handleScroll()
-            }
+### `npm start`
 
-            if (window.scrollY > 150) {
-                component.linkToTopHandler(true)
-            } else if (window.scrollY < 150) {
-                component.linkToTopHandler(false)
-            }
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-          });
-       }
-       scrollFunc(component)
-    }
-    
-   
-```
- Also I do not use redux-thunk , but I just run async function to fetch google fonts when componentDidMount is run, set links tags for stylesheet, and dispatch data to reducer :
- 
- ```javascript
-  class ControlBar extends Component {
-    state ={
-        textVal:'',
-        fontVal:'',
-    }
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-    static getDerivedStateFromProps(props, state) {
-        return props
-    }
+### `npm test`
 
-    componentDidMount(){
-        getData()
-    }
-    
-    ...
-    
-    import store from '../reducer/reducer';
-    
-    export default async function getData() {
-    const response = await fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBHugCJVSIcLu-Pc2EYMQ78Tuky2mCWWng')
-    const myJson = await response.json();
-    const dataArr = JSON.parse(JSON.stringify(myJson.items))
-    store.dispatch({type:'SET-DATA',data :dataArr })
-    dataArr.forEach(el=>{
-      let link = document.createElement('link');
-      link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('type', 'text/css');
-      link.setAttribute('href', `https://fonts.googleapis.com/css?family=${el.family}&display=swap` );
-      document.head.appendChild(link);
-      })
-  }
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    ```
-    
+### `npm run build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
