@@ -5,13 +5,25 @@
 
 
 
-header { 
+.control-bar { 
   margin-bottom: 20px;
   padding: 3px;
   border-radius: 34px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  color: #b8abab;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
 }
 
 
@@ -28,7 +40,7 @@ main {
 }
 
 
-select , input ,header {
+select , input ,.control-bar {
   border: 2px solid transparent;
   outline: none;
   padding-left: 20px;
@@ -59,6 +71,7 @@ header select {
   padding: 20px;
   border-top: 2px solid transparent;
   margin-top: 3px;
+  overflow: hidden;
 }
 
 .main-content-item i{
@@ -107,16 +120,18 @@ position: relative;
 
 
 @media  (max-width: 640px) {
-  header { 
+  .control-bar , .navigation { 
  flex-direction: column;
  height: 13rem;
   }
 
-  #fontVal,#textVal, header > select{
+  #fontVal,#textVal, #select-box{
     border: 2px solid transparent;
   }
   .link-to-top {
     left: 89%;
   }
-
+  .nav-links {
+    width: auto;
+  }
   }

@@ -53,21 +53,34 @@ import styleThemeFunction from '../Auxiliar/themeFunction'
         document.body.style.background =this.state.data.backgroundColor
 
         return (
-            <header style={styleThemeFunction(this.state.data.backgroundColor)[0]}>
+            <header >
+                <nav>
+                <div className="navigation">
+                <h2 className="logo">Google</h2>
+                <span className="nav-links">
+                    <h4>Catalog</h4>
+                    <h4>Featured</h4>
+                    <h4>Articles</h4>
+                    <h4>About</h4>
+                </span>
+                </div>
+                <div className="control-bar" style={styleThemeFunction(this.state.data.backgroundColor)[0]}>
                 <input style={styleThemeFunction(this.state.data.backgroundColor)[0]} id="fontVal" value={this.state.fontVal} placeholder="Type font-family" onChange={this.textHandler} ></input>
                 <input style={styleThemeFunction(this.state.data.backgroundColor)[0]} id="textVal" value={this.state.textVal} placeholder="Type some text here" onChange={this.textHandler}></input>
-                <select style={styleThemeFunction(this.state.data.backgroundColor)[0]} defaultValue="24" onChange={(event) => this.fontHandler(event.target.value)}>
+                <select id="select-box" style={styleThemeFunction(this.state.data.backgroundColor)[0]} defaultValue="24" onChange={(event) => this.fontHandler(event.target.value)}>
                     <option  value="20">20</option>
                     <option  value="24">24</option>
                     <option value="32">32</option>
                     <option value="40">40</option>
                 </select>
                 <span >
-                <input className="black-theme-button" type="radio"   name="page-background" value="white" onClick={this.pageBackgroundHandler}></input>
-               <input className="white-theme-button" type="radio"  name="page-background" value="black" onClick={this.pageBackgroundHandler}></input>
+                <input className="black-theme-button" type="radio"   name="page-background"  value="black" onClick={this.pageBackgroundHandler}></input>
+               <input className="white-theme-button" type="radio"  name="page-background" value="white"  onClick={this.pageBackgroundHandler}></input>
                 </span>
                 {this.state.data.listDisplayBlock !== false?<i style={styleThemeFunction(this.state.data.backgroundColor)[0]} onClick={this.displayListHandler}  className="fas fa-th-large"></i> : <i style={styleThemeFunction(this.state.data.backgroundColor)[0]} onClick={this.displayListHandler} className="fas fa-list"></i>  }
                 {this.state.data.listDisplayBlock !== false?<i style={styleThemeFunction(this.state.data.backgroundColor)[0]} onClick={this.clearTextField}  className="fas fa-undo-alt"></i> : <i style={styleThemeFunction(this.state.data.backgroundColor)[0]} onClick={this.clearTextField} className="fas fa-undo-alt"></i>  }
+                </div>
+                </nav>
             </header>
         )
     }

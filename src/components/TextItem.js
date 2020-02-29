@@ -16,7 +16,7 @@ import styleThemeFunction from '../Auxiliar/themeFunction'
         let component  = this                                                      
        const scrollFunc=(component)=>{ 
         window.addEventListener('scroll', function(e) {
-            if ((window.innerHeight + window.scrollY) > (document.body.offsetHeight-10) ){
+           if ((window.innerHeight + window.scrollY) > (document.body.offsetHeight-10) ){
                   component.handleScroll()
             }
 

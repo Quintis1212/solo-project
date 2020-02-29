@@ -3,7 +3,7 @@ import store from '../reducer/reducer';
 
 
 export default async function getData() {
-    const response = await fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBHugCJVSIcLu-Pc2EYMQ78Tuky2mCWWng')
+    const response = await fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBHugCJVSIcLu-Pc2EYMQ78Tuky2mCWWng&sort=popularity')
     const myJson = await response.json();
     const dataArr = JSON.parse(JSON.stringify(myJson.items))
     store.dispatch({type:'SET-DATA',data :dataArr })
